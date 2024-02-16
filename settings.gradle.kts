@@ -1,1 +1,1 @@
-rootProject.name = "Shoppingmalllist"
+rootProject.name = "ShoppingMallList"
