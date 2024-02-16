@@ -1,5 +1,6 @@
-#spring:
-#  datasource:
-#    url: jdbc:postgresql://aws-0-ap-northeast-2.pooler.supabase.com:5432/postgres
-#    username: postgres.rkaeclmrxuybbidxfwhq
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/aws-0-ap-northeast-2.pooler.supabase.com
+    username: postgres.rkaeclmrxuybbidxfwhq
+    password: ShoppingMallList
+    driver-class-name: org.postgresql.Driver
