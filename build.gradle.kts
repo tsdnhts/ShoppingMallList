@@ -6,7 +6,7 @@ plugins {
 	kotlin("jvm") version "1.9.22"
 	kotlin("plugin.spring") version "1.9.22"
 	kotlin("plugin.noarg") version "1.8.22"
-	kotlin("plugin.jpa") version "1.9.22"
+	kotlin("plugin.jpa") version "1.9.22" // 이것도 다진님이 jpa 관련해서 사용하려고 추가하신듯
 }
 
 group = "com.teamsparta"
@@ -40,7 +40,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") // 이건 다진님이 jpa data 관련해서 사용하려고 추가하신듯?
 	implementation("org.springframework.boot:spring-boot-starter-actuator") // JpaRepository 사용을 위해 추가함
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
