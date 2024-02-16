@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class StoreServiceImpl(
-    private val storeRepository : StoreRepository
+    private val storeRepository: StoreRepository
 ) : StoreService {
     override fun getStores(): List<StoreResponse> {
         TODO("Not yet implemented")
