@@ -19,3 +19,7 @@ logging:
             bind: trace
 server:
   port: 8092
+# 제대로 돌아가는지 내용을 확인하기 위해 SHOW SQL, FORMAT SQL, HIGHLIGHT SQL 추가하였음
+# 8080 포트를 사용중인 경우가 있어 포트 번호를 8092로 설정하였음
+
+
