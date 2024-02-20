@@ -37,6 +37,7 @@ allOpen { annotation("jakarta.persistence.Entity")
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0") // swagger 사용을 위해 추가
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-actuator") // JpaRepository 사용을 위해 추가함
