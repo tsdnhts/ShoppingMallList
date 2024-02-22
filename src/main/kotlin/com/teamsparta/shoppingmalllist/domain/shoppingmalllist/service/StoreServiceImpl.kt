@@ -36,18 +36,4 @@ class StoreServiceImpl(
     override fun collectStoresByAPI(): String {
         TODO("Not yet implemented")
     }
-
-//    private fun convertEngStateToKorState(engState: StoreState?): String? {
-//        val stateMap = mutableMapOf(
-//            StoreState.STOPPED_SITE to "운영중단",
-//            StoreState.CLOSING to "휴업중",
-//            StoreState.PROMOTION to "광고용(홍보용)",
-//            StoreState.INFORMATION_MISMATCH to "등록정보불일치",
-//            StoreState.SITE_CLOSURE to "사이트 폐쇄",
-//            StoreState.OPEN to "영업중",
-//            StoreState.NOT_CHECKED to "확인안됨"
-//        )
-//
-//        return stateMap[engState]
-//    }
 }
