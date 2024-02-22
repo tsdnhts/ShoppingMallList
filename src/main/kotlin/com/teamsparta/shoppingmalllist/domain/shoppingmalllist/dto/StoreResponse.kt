@@ -5,19 +5,21 @@ import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
 import java.time.LocalDateTime
 
 data class StoreResponse (
- val name: String, // 상호명
- val url: String, // 도메인
- val phone: String?, // 대표 번호
- val email: String, // 이메일
- val score : Int,  // 전체 평가
- val state: StoreState, // 업소 상태
- val monitoringDate : LocalDateTime, // 모니터링 날짜
+    val id: Long,
+    val name: String, // 상호명
+    val url: String, // 도메인
+    val phone: String?, // 대표 번호
+    val email: String, // 이메일
+    val score : Int,  // 전체 평가
+    val state: StoreState, // 업소 상태
+    val monitoringDate : LocalDateTime, // 모니터링 날짜
 ) {
 
     // 엔티티 객체를 Response 객체로 바꿔주는 것
   companion object {
     fun from(store: Store): StoreResponse {
         return StoreResponse(
+            id = store.id!!,
             name = store.name,
             url = store.url,
             phone = store.phone,
