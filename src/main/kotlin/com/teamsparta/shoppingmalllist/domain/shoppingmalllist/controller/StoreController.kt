@@ -34,7 +34,6 @@ class StoreController(
         .status(HttpStatus.OK)
         .body(storeService.findStores(score, state))
     }
-
     // Pagination을 사용하여 모든 가게 정보를 조회하기
     @GetMapping
     fun getStoresByPageable(pageable: Pageable) : ResponseEntity<List<StoreResponse>>{
