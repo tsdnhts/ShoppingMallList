@@ -1,11 +1,14 @@
 package com.teamsparta.shoppingmalllist.domain.shoppingmalllist.service
 
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.dto.StoreResponse
+import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties
 import org.springframework.stereotype.Service
 
 @Service
 interface StoreService {
+
+    fun findStores(score: Int?, state: StoreState?): List<StoreResponse>
 
     fun getStores() : List<StoreResponse>
 

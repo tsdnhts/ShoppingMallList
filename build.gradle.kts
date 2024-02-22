@@ -7,6 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.9.22"
 	kotlin("plugin.noarg") version "1.8.22"
 	kotlin("plugin.jpa") version "1.9.22" // 이것도 다진님이 jpa 관련해서 사용하려고 추가하신듯
+	kotlin("kapt") version "1.8.22" // QueryDSL
 }
 
 group = "com.teamsparta"
@@ -45,6 +46,11 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	// SWAGGER
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
+	// QueryDSL
+	implementation("com.querydsl:querydsl-jpa:5.1.0:jakarta")
+	kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
 }
 
 tasks.withType<KotlinCompile> {
