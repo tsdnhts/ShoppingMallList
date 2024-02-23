@@ -3,6 +3,7 @@ package com.teamsparta.shoppingmalllist.domain.shoppingmalllist.service
 import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.dto.StoreResponse
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.Store
+import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.repository.StoreRepository
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.PageRequest
@@ -20,14 +21,9 @@ class StoreServiceImpl(
     private val storeRepository: StoreRepository
 ) : StoreService {
 
-    override fun getStores(pageNo: Int, criteria: String?): MutableList<StoreResponse> {
-        val pageable: Pageable = PageRequest.of(pageNo, 10, Sort.by(Sort.Direction.DESC, criteria))
-        val page = storeRepository.findAll(pageable).map { it.toResponse() }
-        return (page.content)
-    }
-
-    override fun getStoresByPageable(pageable: Pageable): List<StoreResponse> {
-        TODO("Not yet implemented")
+    override fun findStores(score: Int?, state: StoreState?): List<StoreResponse> {
+        return storeRepository.searchStores(score, state)
+             .map { StoreResponse.from(it) }
     }
 
     override fun collectStoresFromCSV() : String {

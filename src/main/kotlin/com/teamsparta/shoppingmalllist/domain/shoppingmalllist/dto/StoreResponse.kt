@@ -1,5 +1,6 @@
 package com.teamsparta.shoppingmalllist.domain.shoppingmalllist.dto
 
+import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.Store
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort.Direction
@@ -8,22 +9,31 @@ import java.util.Properties
 
 
 data class StoreResponse (
- // 전체평가
- var score : Int,
- // 업소상태
- var state: StoreState,
- // 모니터링날짜
- var monitoringDate : String,
 
- var name : String
+    val id: Long,
+    val name: String, // 상호명
+    val url: String, // 도메인
+    val phone: String?, // 대표 번호
+    val email: String, // 이메일
+    val score : Int,  // 전체 평가
+    val state: StoreState, // 업소 상태
+    val monitoringDate : LocalDateTime, // 모니터링 날짜
+) {
 
-    // 32개의 칼럼 중 여기에 어떤 칼럼이 들어가야 하는지?
-)
+    // 엔티티 객체를 Response 객체로 바꿔주는 것
+  companion object {
+    fun from(store: Store): StoreResponse {
+        return StoreResponse(
+            id = store.id!!,
+            name = store.name,
+            url = store.url,
+            phone = store.phone,
+            email = store.email,
+            score = store.score,
+            state = store.state,
+            monitoringDate = store.monitoringDate
+        )
+    }
+  }
+}
 
-//PageRequest(int page, int size)
-//PageRequest(int page, int size, Sort sort)
-//PageRequest(int page, int size, Sort.Direction direction, String... properties)
-//
-//var pageRequest: PageRequest = PageRequest.of(0, 10, Sort.by("id").ascending())
-//PageRequest pageRequest = PageRequest.of(0, 10, Sort.by("id").ascending());
-// 요 자바 코드를 보고 위에 값을 임의작성해봄

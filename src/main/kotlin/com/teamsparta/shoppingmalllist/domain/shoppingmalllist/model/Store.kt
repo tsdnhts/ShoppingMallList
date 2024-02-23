@@ -5,7 +5,7 @@ import jakarta.persistence.*
 import java.time.LocalDateTime
 
 @Entity
-@Table(name = "stores2")
+@Table(name = "stores")
 class Store(
     @Column(name = "name")
     val name: String, // 상호명
@@ -20,7 +20,7 @@ class Store(
     val email: String, // 대표 이메일
 
     @Column(name = "score")
-    val score : Int, // 점수
+    val score : Int, // 전체 평가 점수
 
     @Column(name = "monitoringDate")
     val monitoringDate: String, // 모니터링 날짜

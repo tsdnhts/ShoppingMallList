@@ -4,12 +4,12 @@ import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.Store
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
 import org.springframework.data.domain.Page
 import org.springframework.data.jpa.repository.JpaRepository
-import java.awt.print.Pageable
 
-interface StoreRepository : JpaRepository<Store, Long> {
-//    fun findAll(pageable: Pageable): Page<Store>?
-//    fun findByScoreAndState(score : Int, state : StoreState, pageable: Pageable) : Page<Store>
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor
+import org.springframework.stereotype.Repository
+
+// 우리가 Service 단에서 실제로 사용할 Repository
+
+@Repository
+interface StoreRepository : JpaRepository<Store, Long>, JpaSpecificationExecutor<Store>, CustomStoreRepository {
 }
-//interface ReviewRepository : JpaRepository<Review?, Long?> {
-//    fun findAll(pageable: Pageable?): Page<Review?>?
-// }
