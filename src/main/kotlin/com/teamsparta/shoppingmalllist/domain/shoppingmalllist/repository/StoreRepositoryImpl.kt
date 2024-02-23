@@ -23,7 +23,7 @@ class StoreRepositoryImpl : QueryDslSupport(), CustomStoreRepository {
         } // state 가 null 이 아닌 경우(= state 에 체크가 된 경우) 조건 추가
 
         // 조건문을 대입한 목록 조회
-        val storeList = queryFactory.selectFrom(store).orderBy(store.monitoringDate.desc()).where(whereClause).fetch()
+        val storeList = queryFactory.selectFrom(store).orderBy(store.monitoringDate.desc()).where(whereClause).limit(10).fetch()
         return storeList
     }
 }

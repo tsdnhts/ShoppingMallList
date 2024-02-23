@@ -17,7 +17,7 @@ data class StoreResponse (
     val email: String, // 이메일
     val score : Int,  // 전체 평가
     val state: StoreState, // 업소 상태
-    val monitoringDate : LocalDateTime, // 모니터링 날짜
+    val monitoringDate : String, // 모니터링 날짜
 ) {
 
     // 엔티티 객체를 Response 객체로 바꿔주는 것

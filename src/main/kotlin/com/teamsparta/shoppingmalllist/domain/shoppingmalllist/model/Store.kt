@@ -32,13 +32,19 @@ class Store(
     @Column(name = "address")
     val address: String,
 ) {
-    fun toResponse(): StoreResponse {
+    companion object {
+    fun from(store: Store): StoreResponse {
         return StoreResponse(
-            score = score,
-            state = state,
-            monitoringDate = monitoringDate,
-            name = name,
+            id = store.id!!,
+            name = store.name,
+            url = store.url,
+            phone = store.phone,
+            email = store.email,
+            score = store.score,
+            state = store.state,
+            monitoringDate = store.monitoringDate
         )
+    }
     }
 
     //storeresponse 구현을 위해 생성하였음

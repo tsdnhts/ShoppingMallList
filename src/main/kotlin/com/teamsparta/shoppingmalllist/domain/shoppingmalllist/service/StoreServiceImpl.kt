@@ -26,6 +26,10 @@ class StoreServiceImpl(
              .map { StoreResponse.from(it) }
     }
 
+    override fun getStores(): List<StoreResponse> {
+        TODO("Not yet implemented")
+    }
+
     override fun collectStoresFromCSV() : String {
         csvReader().open("src/main/resources/file.csv") {
             readAllAsSequence().forEachIndexed { index, row: List<String> ->
