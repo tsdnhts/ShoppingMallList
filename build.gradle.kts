@@ -42,8 +42,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	implementation("org.springframework.boot:spring-boot-starter-actuator") // JpaRepository 사용을 위해 추가함
 	runtimeOnly("org.postgresql:postgresql")
+//	implementation("org.jetbrains.kotlinx:kotlinx-serialization-csv:0.22.0") // kotlinx.csv 패키지 사용을 위해 추가함
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.3")// readAllWithHeaderAsSequence 메서드 사용을 위한 추가
+
 }
 
 tasks.withType<KotlinCompile> {

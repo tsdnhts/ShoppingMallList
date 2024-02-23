@@ -13,8 +13,9 @@ data class StoreResponse (
  // 업소상태
  var state: StoreState,
  // 모니터링날짜
- var monitoringDate : LocalDateTime,
+ var monitoringDate : String,
 
+ var name : String
 
     // 32개의 칼럼 중 여기에 어떤 칼럼이 들어가야 하는지?
 )
