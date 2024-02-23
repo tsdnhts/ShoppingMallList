@@ -1,7 +1,10 @@
 package com.teamsparta.shoppingmalllist.domain.shoppingmalllist.repository
 
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.Store
+import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
+import org.springframework.data.domain.Page
 import org.springframework.data.jpa.repository.JpaRepository
+
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor
 import org.springframework.stereotype.Repository
 

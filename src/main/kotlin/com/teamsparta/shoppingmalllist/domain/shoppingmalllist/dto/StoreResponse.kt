@@ -2,9 +2,14 @@ package com.teamsparta.shoppingmalllist.domain.shoppingmalllist.dto
 
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.Store
 import com.teamsparta.shoppingmalllist.domain.shoppingmalllist.model.StoreState
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Sort.Direction
 import java.time.LocalDateTime
+import java.util.Properties
+
 
 data class StoreResponse (
+
     val id: Long,
     val name: String, // 상호명
     val url: String, // 도메인
@@ -31,3 +36,4 @@ data class StoreResponse (
     }
   }
 }
+

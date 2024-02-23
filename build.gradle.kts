@@ -41,16 +41,20 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa") // 이건 다진님이 jpa data 관련해서 사용하려고 추가하신듯?
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa") // jpa data 관련
 	implementation("org.springframework.boot:spring-boot-starter-actuator") // JpaRepository 사용을 위해 추가함
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("com.github.doyaaaaaken:kotlin-csv-jvm:1.9.3")// readAllWithHeaderAsSequence 메서드 사용을 위한 추가
+
+
 	// SWAGGER
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0")
 	// QueryDSL
 	implementation("com.querydsl:querydsl-jpa:5.1.0:jakarta")
 	kapt("com.querydsl:querydsl-apt:5.1.0:jakarta")
+
 }
 
 tasks.withType<KotlinCompile> {
